@@ -1,6 +1,6 @@
-package com.example.demo.listener;
+package com.example.demo.listener.impl;
 
-import com.example.demo.listener.impl.PlayListen;
+import com.example.demo.listener.PlayListen;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.springframework.stereotype.Component;
 

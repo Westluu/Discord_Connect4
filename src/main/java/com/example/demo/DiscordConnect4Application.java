@@ -1,6 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.listener.impl.PlayListen;
+import com.example.demo.listener.PlayListen;
+import com.example.demo.listener.status;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class DiscordConnect4Application {
 	@Autowired
 	private PlayListen playListen;
 
+	@Autowired
+	private status Status;
+
 	@Bean
 	@ConfigurationProperties(value = "discord-api")
 	public DiscordApi discordApi() {
@@ -32,6 +36,7 @@ public class DiscordConnect4Application {
 				.join();
 
 		api.addMessageCreateListener(playListen);
+		api.addMessageCreateListener(Status);
 		return api;
 	}
 }

@@ -1,4 +1,4 @@
-package com.example.demo.listener.impl;
+package com.example.demo.listener;
 
 import org.javacord.api.listener.message.MessageCreateListener;
 
